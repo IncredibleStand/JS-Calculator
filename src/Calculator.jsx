@@ -7,12 +7,18 @@ function Calculator() {
   const operators = ['+', '-', '*', '/'];
 
   const handleClick = (input) => {
+    
+    // Case for Error
+    if (display === 'Error') { 
+      setDisplay(input); 
+      return; 
+    }
 
     // Case for infinity
     if (display === 'Infinity') { 
       setDisplay(input); 
       return; 
-  }
+    }
     // Last value in the display
     const lastChar = display.slice(-1);
 
